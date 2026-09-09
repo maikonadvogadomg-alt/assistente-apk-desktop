@@ -1,0 +1,47 @@
+╔══════════════════════════════════════════════════════╗
+║       ASSISTENTE IA JURÍDICO — COMO GERAR APK        ║
+╚══════════════════════════════════════════════════════╝
+
+OPÇÃO 1 — MAIS FÁCIL (sem instalar nada)
+─────────────────────────────────────────
+Acesse: https://www.pwabuilder.com
+Cole o link: https://insight-dashboard-meulegale1.replit.app/assistente/
+Clique em "Package for stores" → Android → Download APK
+
+──────────────────────────────────────────────────────
+
+OPÇÃO 2 — CAPACITOR (precisa Node.js + Android Studio)
+───────────────────────────────────────────────────────
+Pré-requisitos:
+  - Node.js 18+  →  https://nodejs.org
+  - Android Studio  →  https://developer.android.com/studio
+  - JDK 17+  →  vem junto com Android Studio
+
+Passos:
+  1. Abra o terminal nesta pasta
+  2. npm install
+  3. npx cap add android
+  4. npx cap sync android
+  5. npx cap open android
+     (abre Android Studio)
+  6. No Android Studio: Build → Build Bundle(s)/APK(s) → Build APK(s)
+  7. O APK fica em:  android/app/build/outputs/apk/debug/app-debug.apk
+
+IMPORTANTE:
+  - O app DENTRO do APK carrega o site online
+    (https://insight-dashboard-meulegale1.replit.app/assistente/)
+  - Precisa de internet para funcionar
+  - Para usar sem internet: trocar "server.url" no capacitor.config.json
+    pela pasta "www" (já está incluída neste ZIP)
+
+──────────────────────────────────────────────────────
+
+OPÇÃO 3 — TWA via Bubblewrap (APK nativo sem Android Studio)
+──────────────────────────────────────────────────────────────
+  npm install -g @bubblewrap/cli
+  bubblewrap init --manifest https://insight-dashboard-meulegale1.replit.app/assistente/manifest.webmanifest
+  bubblewrap build
+
+──────────────────────────────────────────────────────
+App: Assistente IA Jurídico
+URL: https://insight-dashboard-meulegale1.replit.app/assistente/
